@@ -49,7 +49,6 @@ jobs:
           tags: |
             type=raw,value=latest
             type=raw,value=${{ steps.base.outputs.tag }}
-            type=sha
           labels: |
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.title=${{ github.event.repository.name }}
