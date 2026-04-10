@@ -65,6 +65,7 @@ jobs:
         if: steps.current.outputs.tag != steps.latest.outputs.tag
         uses: peter-evans/create-pull-request@v7
         with:
+          token: ${{ secrets.PR_WORKFLOW_TOKEN }}
           branch: chore/update-base-image-${{ steps.latest.outputs.tag }}
           commit-message: "chore: update base image to ${{ steps.latest.outputs.tag }}"
           title: "chore: update base image to ${{ steps.latest.outputs.tag }}"
