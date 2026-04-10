@@ -6,6 +6,7 @@ on:
       - Dockerfile
       - BASE_TAG
       - .github/workflows/build.yaml
+      - .github/workflows/update-base-image.yaml
       - .github/workflows/pr-build.yaml
 
 permissions:
