@@ -18,7 +18,8 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: ghcr.io/${{ github.repository }}
+      GHCR_IMAGE_NAME: ghcr.io/${{ github.repository }}
+      DOCKERHUB_IMAGE_NAME: docker.io/${{ vars.DOCKERHUB_USERNAME }}/jupyter-pytorch-ai
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -41,11 +42,19 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
       - name: Extract metadata
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.IMAGE_NAME }}
+          images: |
+            ${{ env.GHCR_IMAGE_NAME }}
+            ${{ env.DOCKERHUB_IMAGE_NAME }}
           tags: |
             type=raw,value=latest
             type=raw,value=${{ steps.base.outputs.tag }}
