@@ -2,11 +2,6 @@ name: PR Build
 
 on:
   pull_request:
-    paths:
-      - Dockerfile
-      - BASE_TAG
-      - .github/workflows/build.yaml
-      - .github/workflows/pr-build.yaml
 
 permissions:
   contents: read
