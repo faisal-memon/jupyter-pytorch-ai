@@ -63,7 +63,7 @@ jobs:
 
       - name: Create pull request
         if: steps.current.outputs.tag != steps.latest.outputs.tag
-        uses: peter-evans/create-pull-request@v7
+        uses: peter-evans/create-pull-request@v8
         with:
           token: ${{ secrets.PR_WORKFLOW_TOKEN }}
           branch: chore/update-base-image-${{ steps.latest.outputs.tag }}
