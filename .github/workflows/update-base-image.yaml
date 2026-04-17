@@ -22,7 +22,7 @@ jobs:
 
       - name: Find latest upstream tag
         id: latest
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const response = await fetch("https://quay.io/api/v1/repository/jupyter/pytorch-notebook/tag/?onlyActiveTags=true&limit=100");
