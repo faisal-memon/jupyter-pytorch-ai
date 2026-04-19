@@ -64,7 +64,7 @@ jobs:
             org.opencontainers.image.description=Derived Jupyter PyTorch image with Jupyter AI and Codex tooling
 
       - name: Build and push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: ./Dockerfile
