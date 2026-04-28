@@ -30,7 +30,7 @@ jobs:
           echo "tag=$(cat BASE_TAG)" >> "$GITHUB_OUTPUT"
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
+        uses: docker/setup-qemu-action@v4
 
       - name: Set up Buildx
         uses: docker/setup-buildx-action@v4
@@ -64,7 +64,7 @@ jobs:
             org.opencontainers.image.description=Derived Jupyter PyTorch image with Jupyter AI and Codex tooling
 
       - name: Build and push
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: ./Dockerfile
