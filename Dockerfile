@@ -1,4 +1,4 @@
-ARG BASE_TAG=2026-05-11
+ARG BASE_TAG=2026-06-05
 FROM quay.io/jupyter/pytorch-notebook:${BASE_TAG}
 
 ENV NPM_CONFIG_PREFIX=/home/jovyan/.local/npm
