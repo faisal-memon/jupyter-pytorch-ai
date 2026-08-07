@@ -22,7 +22,7 @@ jobs:
       DOCKERHUB_IMAGE_NAME: docker.io/${{ vars.DOCKERHUB_USERNAME }}/jupyter-pytorch-ai
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Read pinned base tag
         id: base
