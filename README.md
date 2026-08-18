@@ -20,7 +20,7 @@ copied into the `Dockerfile` as the default value for `ARG BASE_TAG`.
 Current base image:
 
 ```text
-quay.io/jupyter/pytorch-notebook:2026-08-10
+quay.io/jupyter/pytorch-notebook:2026-08-17
 ```
 
 Published image target:
